@@ -1,0 +1,85 @@
+<html>
+<head>
+	<base href="/" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>PluribusNetworks Netviser</title>
+	<link rel="stylesheet" type="text/css" href="/css/netviser.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/jquery-easyui/themes/metro-orange/easyui.css"/>
+	<link  href="/jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+	<script src="/jquery-easyui/jquery.min.js"></script>
+	<script src="/jquery-easyui/jquery.easyui.min.js"></script>
+	<script src="/jquery-easyui/datagrid-filter.js"></script>
+	<script src="/js/netviser-utils.js"></script>
+</head>
+
+<body>
+<style>
+	div#panel-all, div#panel-content {
+		margin: 0px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding: 20px;
+		padding-bottom: 20px;
+	}
+	
+	div#panel-header {
+		position: absolute;
+		left: 20;
+		right: 20;
+		top: 20px;
+		height: 50px;
+		background-color: white;
+		background-image: url(/images/logo.png);
+		background-repeat: no-repeat;
+		background-position: 5px;
+		padding-left: 170px;
+	}
+
+	div#panel-header span {
+		position: absolute; 
+		left: 0;
+		right: 0;
+		bottom:10; 
+	}
+
+	div#panel-header a {
+		text-decoration: underline; 
+	}
+	
+	div#panel-menu {
+		top: 0;
+		height: 20px;
+		background-color: #ccc;
+		padding-left: 10px;
+	}
+	
+	div#panel-content {
+		top: 60px;
+		background-color: white;
+		margin: 20px;
+		padding: 10px;
+	}
+</style>
+
+	<div id="panel-all">
+		<div id="panel-header">
+			<span style="font-size: 14pt; left: 170px; color: #777;">PluribusNetworks Netviser</span>
+			<span style="left: 500px; ">
+				<a style="bottom: 10px;" href="/browse.html">Device Status</a> <b>|</b>
+				<a style="bottom: 10px;" href="/others.html">Others</a>
+			</span>
+		</div>
+		<div id="panel-menu">
+			<a href="http://www.google.com">Browse</a>
+		</div>
+		<div id="panel-content">
+			<div th:replace="${content}::all"></div>
+		</div>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/tiles/baseLayout.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/tiles/side.jsp" />
+		<put-attribute name="body" value="/WEB-INF/tiles/body.jsp" />
+	</definition>
+
+	<definition name="app-wall" extends="baseLayout">
+		<put-attribute name="header" value="resources/images/app-wall.png" />
+		<put-attribute name="title" value="App Wall" />
+		<put-attribute name="body" value="/WEB-INF/views/app-wall.jsp" />
+	</definition>
+	
+	<definition name="top-talker" extends="baseLayout">
+		<put-attribute name="header" value="resources/images/top-talker.png" />
+		<put-attribute name="title" value="Top Talker" />
+		<put-attribute name="body" value="/WEB-INF/views/top-talker.jsp" />
+	</definition>	
+	
+	<definition name="flow-drill" extends="baseLayout">
+		<put-attribute name="header" value="resources/images/flow-drill.png" />
+		<put-attribute name="title" value="Flow Drill" />
+		<put-attribute name="body" value="/WEB-INF/views/flow-drill.jsp" />
+	</definition>	
+
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="header" value="resources/images/pluribus-networks.png" />
+		<put-attribute name="title" value="Pluribus Networks App Suite" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+		
+</tiles-definitions>

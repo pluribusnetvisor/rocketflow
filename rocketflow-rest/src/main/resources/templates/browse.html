@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	    <div th:fragment="all" id="pp1" class="easyui-layout" fit="true" style="width:100%; height:100%;">
+	    	<!-- 
+	    		WEST PANEL
+	    	 -->
+	        <div data-options="border: false, region:'west',split:true" style="width:400px;">
+					    <table id="deviceGrid" fit="true" class="easyui-datagrid" title="Devices" data-options="border: true, singleSelect:true, collapsible:true, method:'get'">
+					        <thead>
+					            <tr>
+					                <th data-options="field:'deviceId', sortable:true"><b>ID</b></th>
+					                <th data-options="field:'ip', sortable:true"><b>IP</b></th>
+					                <th data-options="field:'ports', sortable:true"><b>Port</b></th>
+					                <th data-options="field:'mac', sortable:true"><b>MAC</b></th>
+					            </tr>
+					        </thead>
+					    </table>
+	        </div>
+	        
+	        <!-- 
+	        	CENTER PANEL
+	         -->
+	        <div data-options="region:'center', border: false">
+					    <table id="connectionGrid" class="easyui-datagrid" title="Connections" 
+					            data-options="border: true, fit: true, singleSelect:true, collapsible:true, method:'get'">
+					        <thead>
+					            <tr>
+					                <th data-options="field:'connectionId'"><b>ID</b></th>
+					                <th data-options="field:'vxlan'"><b>vxlan</b></th>
+					                <th data-options="field:'clientIp'"><b>Client</b></th>
+					                <th data-options="field:'serverIp'"><b>Server</b></th>
+					                <th data-options="field:'serverPort'"><b>Port</b></th>
+					                <th data-options="field:'avgDur'"><b>Duration</b></th>
+					                <th data-options="field:'avgLat'"><b>Latency</b></th>
+					            </tr>
+					        </thead>
+					    </table>
+	        </div>
+	        
+<script>
+
+resizer.addResizer(function() {
+	var w = $(window).width() - 60;
+	var h = $(window).height() - 350;
+    $('#pp1').layout('resize', {width: w, height: h});
+});
+
+$(function() {
+ 	loadDevices();
+});
+
+
+function loadDevices() {
+	var dg = $('#deviceGrid').datagrid({
+		url:'/v1/devices/',
+		onSelect: function(index, row) {
+			loadConnections(row.deviceId);
+		}
+	});
+	
+ 	dg.datagrid('enableFilter');
+}
+
+function loadConnections(deviceId) {
+	 var pg = $('#connectionGrid').datagrid({
+	    	url: '/v1/devices/' + deviceId + "/connections"
+	 });
+}
+</script>
+
+	        
+	        
+	        
+	        
+	    </div>
+</body>
+</html>

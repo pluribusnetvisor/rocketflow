@@ -1,0 +1,45 @@
+body {
+	padding: 0px;
+	margin: 30px;
+	background-color: #1863A9;
+	color: #404040;
+	font-family: verdana, helvetica;
+	font-size: 13pt; 
+}
+
+
+h1 {
+	font-size: 16pt;
+	margin: 2px;
+	padding: 2px;
+	font-family: verdana, helvetica;
+}
+
+h2 {
+	font-size: 14pt;
+	margin: 2px;
+	padding: 2px;
+	font-family: verdana, helvetica;
+}
+
+h3 {
+	font-size: 12pt;
+	margin: 2px;
+	padding: 2px;
+	font-family: verdana, helvetica;
+}
+
+a {
+	text-decoration: none; 
+	color: #1863A9;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #1863A9;
+}
+
+a:hover {
+	text-decoration: none;
+	color: red;
+}

@@ -7,11 +7,6 @@
 		<class>com.pluribus.data.entity.mysql.ConnectionEntityMySQL</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/livestats20?query_cache_size=0" />
-			<property name="javax.persistence.jdbc.user" value="livestats" />
-			<property name="javax.persistence.jdbc.password" value="test123" />
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 <!-- 			<property name="eclipselink.logging.level" value="FINE" /> -->
 <!-- 			<property name="eclipselink.ddl-generation" value="create-tables" /> -->
 		</properties>
